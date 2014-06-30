@@ -8,16 +8,16 @@ class User < ActiveRecord::Base
 	has_many :followed_users, 
 		through: :followed_user_relationships
 
-	def follow(other_users)
-		followed_users << other_users
+	def follow(other_user)
+		followed_users << other_user
 	end
 
-	def unfollow(other_users)
-		followed_users.destroy(other_users)
+	def unfollow(other_user)
+		followed_users.destroy(other_user)
 	end
 
-	def following?(follower_id)
-		followed_users.include?(follower_id)
+	def following?(other_user)
+		followed_user_ids.include?(other_user.id)
 	end
 		
 end
