@@ -9,6 +9,15 @@ class User < ActiveRecord::Base
 		through: :followed_user_relationships
 
 	def follow(other_users)
-		 followed_users << other_users
+		followed_users << other_users
 	end
+
+	def unfollow(other_users)
+		followed_users.destroy(other_users)
+	end
+
+	def following?(follower_id)
+		followed_users.include?(follower_id)
+	end
+		
 end
