@@ -1,0 +1,6 @@
+<ul>
+	<li>
+		<%= shout.body %>
+		<p>Created by <%= link_to shout.user.email, shout.user %> <%= time_ago_in_words(shout.created_at) %> ago. </p>
+	</li>
+</ul>

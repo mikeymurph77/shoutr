@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1><%= link_to image_tag("Shoutr_logo.png", :border => 0), root_path %></h1>
+
 <% if signed_in? %>
-  <%= link_to "Sign Out", :session, method: :delete %>
+  <%= button_to "Sign Out", :session, method: :delete %>
 <% else %>
   <%= link_to "Sign in", root_path %>
   <%= link_to "Sign up", sign_up_path %>
