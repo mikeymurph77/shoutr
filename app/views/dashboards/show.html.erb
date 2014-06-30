@@ -1,0 +1,6 @@
+<%= current_user.email %>
+
+<%= form_for @shout do |form| %>
+	<%= form.text_area :body, placeholder: "Enter your shout" %>
+	<%= form.submit "Shout" %>
+<% end %>
