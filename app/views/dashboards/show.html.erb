@@ -1,8 +1,13 @@
-<%= link_to current_user.email, current_user %>
+<div>
+<p>Welcome <%= link_to current_user.email, current_user %>!</p>
+		<%= link_to "Followers", :followers %>
+		<%= link_to "Who I'm Following", :following %>
+</div>
 
-<%= link_to "Following", :following %>
+<br>
 
+<p><strong>Shout!</strong></p>
 <%= form_for @shout do |form| %>
-	<%= form.text_area :body, placeholder: "Enter your shout" %>
-	<%= form.submit "Shout" %>
+  <%= form.text_area :body, placeholder: "Compose new Shout..." %>
+  <%= form.submit "Shout" %>
 <% end %>

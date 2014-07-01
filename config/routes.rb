@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   constraints Monban::Constraints::SignedIn.new do
     get "/", to: "dashboards#show", as: :dashboard
+    resource :followers, only: [:show]
     resource :following, only: [:show]
    end
 

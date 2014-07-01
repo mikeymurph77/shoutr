@@ -1,15 +1,14 @@
 class ShoutsController < ApplicationController
-	def create
-		current_user.shouts.create(shout_params)
+  def create
+    current_user.shouts.create(shout_params)
+    redirect_to :dashboard
+  end
 
-		redirect_to :dashboard
-	end
+  private
 
-	private
-
-	def shout_params
-		params.require(:shout).permit(
-			:body,
-			)
-	end
+  def shout_params
+    params.require(:shout).permit(
+      :body,
+    )
+  end
 end
