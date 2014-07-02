@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
   has_many :followers,
     through: :follower_relationships
 
+  validates :user_name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :password_digest, presence: true
+
   def follow(other_user)
     followed_users << other_user
   end
