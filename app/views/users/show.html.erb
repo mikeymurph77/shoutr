@@ -1,4 +1,4 @@
-<%= @user.email %>
+<%= @user.user_name %>
 <%= render "follow_button", user: @user %>
 <ul>
   <%= render @shouts.order(created_at: :desc) %>
