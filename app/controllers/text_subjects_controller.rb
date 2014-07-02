@@ -2,7 +2,7 @@ class TextSubjectsController < ApplicationController
 
   def create
     text_subject = TextSubject.create(text_params)
-    current_user.shouts.create(subject_id: text_subject.id, subject_type: text_subject)
+    current_user.shouts.create(subject_id: text_subject.id, subject_type: "TextSubject")
     
     redirect_to :dashboard
   end
