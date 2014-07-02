@@ -39,4 +39,8 @@ class User < ActiveRecord::Base
     Shout.where(user_id: followed_users + [self]).
       order(created_at: :desc)
   end
+
+  def shouts
+    Shout.where(user_id: self).order(created_at: :desc)
+  end
 end
