@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :shouts, only: [:create]
   resources :text_subjects, only: [:create]
+  resources :image_subjects, only: [:create]
 
   get "/sign_up", to: "users#new"
   

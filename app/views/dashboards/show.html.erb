@@ -6,9 +6,15 @@
 
 <br>
 
-<p><strong>Shout!</strong></p>
+<p><strong>Create a Text Shout!</strong></p>
 <%= form_for @text_subject do |form| %>
   <%= form.text_area :body, placeholder: "Compose new Shout..." %>
+  <%= form.submit "Shout" %>
+<% end %>
+
+<p><strong>Upload an Image Shout!</strong></p>
+<%= form_for @image_subject do |form| %>
+  <%= form.url_field :url, placeholder: "Paste link address here..." %>
   <%= form.submit "Shout" %>
 <% end %>
 
