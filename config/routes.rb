@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   require "monban/constraints/signed_in"
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create] do
-  	resource :following_relationship, only: [:create, :destroy]
-  end
+  resources :users, only: [:new, :create]do
+   resource :following_relationship, only: [:create, :destroy]
+ end 
 
   resources :shouts, only: [:create]
   resources :text_subjects, only: [:create]

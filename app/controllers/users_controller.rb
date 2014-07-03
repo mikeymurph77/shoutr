@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   skip_before_action :require_login, only: [:show, :new, :create]
 
   def show
-    @user = User.find_by(user_name: params[:user_name])
-    @shouts = @user.shouts.page params[:page]
+    @user = User.find_by!(user_name: params[:user_name])
+    @shouts = @user.shouts.page(params[:page])
   end
 
   def new
